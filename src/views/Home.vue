@@ -1,18 +1,41 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Welcom to My Vue App</h1>
+    <div class="container">
+      <img :src="img">
+      <div>
+        <p>{{ firstPara }}</p>
+        <p>{{ secondPara }}</p>
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
-  name: "home",
-  components: {
-    HelloWorld
+  data () {
+    return {
+      img: require("../assets/logo.png"),
+      firstPara: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula euismod aliquet. Aenean ac nisi eget turpis auctor semper eu non sapien. Maecenas a libero ac risus feugiat facilisis. Aenean fermentum, metus vitae aliquam consequat, felis diam iaculis sem, at mattis ex dolor eget diam. Nullam fermentum in neque eget volutpat. Integer rutrum eget dolor sed pharetra. Fusce lacinia ex quam, aliquet faucibus lorem ultricies eu.",
+      secondPara:  "Mauris laoreet est congue ullamcorper ultrices. Nullam turpis risus, aliquet ut commodo sed, ultricies quis lorem. Suspendisse potenti. Suspendisse cursus blandit leo quis vulputate. Cras imperdiet quis lorem finibus placerat. Duis nunc mauris, interdum a leo non, rutrum fermentum tellus. In dignissim facilisis sem vitae luctus. Aliquam eleifend elementum tellus. Nullam vestibulum eu arcu eget suscipit."
+    }
   }
-};
+}
 </script>
+
+<style>
+  .home {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+  .container {
+    display: flex;
+  }
+
+  .container * {
+    margin: 10px;
+  }
+
+</style>
